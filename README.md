@@ -41,11 +41,6 @@ Through this project, I practiced:
 
 ---
 
-## 📸 Preview
-
-![App Preview](./design/desktop-preview.jpg)
-
----
 
 ## ⚙️ How It Works
 
