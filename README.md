@@ -4,6 +4,9 @@ A simple and interactive tip calculator built with **HTML, CSS, and JavaScript**
 This project allows users to calculate the tip amount and total per person بسهولة وبشكل فوري.
 
 ---
+## 🌍 Live Demo
+
+👉 https://sohib-ezaldeen.github.io/-Tip-calculator-app/
 
 ## 🚀 Features
 
@@ -97,9 +100,7 @@ The reset button:
 
 ---
 
-## 🌍 Live Demo
-
-👉 (Add your deployed link here)
+ 
 
 ---
 
