@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Overpass:ital,wght@0,100..900;1,100..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Tip calculator app</title>
+  </head>
+  <body>
+    <div class="logo">
+      <img src="images/logo.svg" alt="" srcset="" />
+    </div>
+    <main>
+      <!-- start Input fields container  -->
+      <div class="input-container">
+        <!-- start Special box for invoice price -->
+        <form action="" id="calculator-form">
+          <div class="bill-box">
+            <label for="Invoice-price">Bill</label>
+            <div class="input-box">
+              <img src="images/icon-dollar.svg" alt="dollar icon" srcset="" />
+              <input type="number" class="bill-field" id="bill-field" />
+            </div>
+          </div>
+        </form>
+        <!-- end start Special box for invoice price -->
+
+        <!-- start Tip box -->
+        <div class="tip-box">
+          <h3 class="tip">Select Tip %</h3>
+          <div class="box-select-tip">
+            <button data-tip="5">5%</button>
+            <button data-tip="10">10%</button>
+            <button data-tip="15">15%</button>
+            <button data-tip="20">20%</button>
+            <button data-tip="50">50%</button>
+            <input type="number" class="tip-filed" placeholder="Custom" />
+          </div>
+        </div>
+        <!-- end Tip box -->
+
+        <!-- start box Number of people  -->
+        <div class="people-box">
+          <div class="info">
+            <label for="people-input">Number Of People</label>
+            <span class="people-validation none"> can`t be zero or less</span>
+          </div>
+          <div class="input-box">
+            <img src="images/icon-person.svg" alt="" srcset="" />
+
+            <input
+              id="people-input"
+              type="number"
+              min="0"
+              class="people-filed"
+            />
+          </div>
+        </div>
+        <!-- end box Number of people  -->
+      </div>
+      <!--  end Input fields container  -->
+
+      <!-- start Results  container -->
+      <div class="results-container">
+        <div class="data-of-bill">
+          <!-- start of Tip Amount Box -->
+          <div class="tip-amount-box">
+            <div class="title">
+              <h3>Tip Amount</h3>
+              <span>/ person</span>
+            </div>
+            <div class="amount-person">$00.00</div>
+          </div>
+          <!-- end of Tip Amount Box -->
+
+          <!-- start  of Total Box-->
+          <div class="total-box">
+            <div class="title">
+              <h3>Total</h3>
+              <span>/ person</span>
+            </div>
+            <div class="total-person">$00.00</div>
+          </div>
+          <!-- end of Total Box-->
+        </div>
+
+        <button form="calculator-form" type="reset" class="btn-reset">
+          reset
+        </button>
+      </div>
+
+      <!--  end Results  container -->
+    </main>
+    <script src="main.js"></script>
+  </body>
+</html>
