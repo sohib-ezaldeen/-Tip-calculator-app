@@ -1,3 +1,4 @@
+// Selecting  Element
 let billField = document.querySelector(".bill-field");
 let btnOfTip = document.querySelectorAll(".box-select-tip button");
 let peopleFiled = document.querySelector(".people-filed");
@@ -6,29 +7,32 @@ let totalPerson = document.querySelector(".total-person");
 let peopleValidation = document.querySelector(".people-validation");
 let tipInputFiled = document.querySelector(".tip-filed");
 let btnReset = document.querySelector(".btn-reset");
+
+//global  so that it can be accessed
 let billValue;
 let peopleValue;
 let tipValue;
 
+// Event input in biilField
 billField.addEventListener("input", (e) => {
   billValue = Number(e.target.value);
   divisionTipOfPerson(billValue, tipValue, peopleValue);
 });
 
+// Event Click the buttons to select the percentage
 btnOfTip.forEach((ele, index, arry) => {
   ele.addEventListener("click", () => {
     arry.forEach((e) => {
       e.classList.remove("check");
     });
-
     ele.classList.add("check");
-
     tipValue = Number(ele.dataset.tip);
     tipInputFiled.value = "";
     divisionTipOfPerson(billValue, tipValue, peopleValue);
   });
 });
-// *************
+
+// Event input to Enter the percentage manually to select it
 tipInputFiled.addEventListener("input", function (e) {
   tipValue = Number(e.target.value);
   btnOfTip.forEach((ele) => {
@@ -36,13 +40,15 @@ tipInputFiled.addEventListener("input", function (e) {
   });
   divisionTipOfPerson(billValue, tipValue, peopleValue);
 });
-// *******************52
+
+// Event: Number of people entered
 peopleFiled.addEventListener("input", (e) => {
   peopleValue = Number(e.target.value);
 
   divisionTipOfPerson(billValue, tipValue, peopleValue);
 });
 
+//  Event click btnReset Clear all fields
 btnReset.addEventListener("click", () => {
   billValue = 0;
   peopleValue = 0;
@@ -52,12 +58,15 @@ btnReset.addEventListener("click", () => {
   });
   amountPerson.textContent = "$00.00";
   totalPerson.textContent = "$00.00";
-  billField.value=""
+  billField.value = "";
   peopleFiled.value = "";
   tipInputFiled.value = "";
 });
 
+
+//  Value Calculation Function 
 function divisionTipOfPerson(bill, tip, countpepole) {
+  // Validation
   if (!bill || !tip || bill <= 0 || tip <= 0) {
     amountPerson.textContent = "$00.00";
     totalPerson.textContent = "$00.00";
@@ -72,7 +81,7 @@ function divisionTipOfPerson(bill, tip, countpepole) {
     return;
   } else {
     peopleValidation.classList.add("none");
-     peopleFiled.style.border = "";
+    peopleFiled.style.border = "";
   }
 
   let tipTotal = (bill * tip) / 100;
